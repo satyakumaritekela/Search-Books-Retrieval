@@ -1,0 +1,14 @@
+version: '3.0'
+services:
+  node_1:
+    build: search
+    ports:
+      - '3000:3000'
+  node_2:
+    build: catalogue
+    ports:
+      - '5000:5000'
+  node_3:
+    build: notes
+    ports:
+      - '8000:8000' 
