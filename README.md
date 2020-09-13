@@ -1,5 +1,5 @@
 # CSCI-5409-A3
-Advanced Topics in Cloud Computing - MERN Application deployed in AWS cloud using Docker Compose
+Advanced Topics in Cloud Computing - MEAN Application deployed in AWS cloud using Docker Compose
 
 Services
 ********
