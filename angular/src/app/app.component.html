@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <h1>Search for a book Title, Author....</h1>
+  </div>
+  <div class="row main_content">
+    <div class="col-sm-9">
+      <div class="input-group mb-3 col-sm-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Keyword</span>
+        </div>
+        <input type="text" class="input search_input" (keyup)="onNameKeyUp($event)" class="form-control" placeholder="Enter a keyword" aria-label="keyword">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" (click) = "onSearch()" type="button">Search</button>
+          <button class="btn btn-outline-success" (click) = "onNotesRe()" type="button">Get Notes</button>
+        </div>
+      </div>
+      <p *ngIf='empty'>Enter any Keyword. Cannot be empty</p>
+      <p *ngIf='nokeyword'>There are no enteries for the entered keyword</p>
+      <div class="row">
+        <div class="col-8 col-sm-8">
+          <p *ngIf='searchword'>Search for a keyword to display the table</p>
+          <div class="table-responsive books_table" *ngIf='found'>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = 'let b of book'>
+                  <td>{{b.Title}}</td>
+                  <td>{{b.Author}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive books_table" *ngIf='notesfound'>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Keyword</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = 'let b of book'>
+                  <td>{{b.keyword}}</td>
+                  <td>{{b.notes}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4">
+          <div class="form-group">
+            <label for="Notes">Notes</label>
+            <textarea class="form-control" id="Notes" rows="8" (keyup)="onNotesKeyUp($event)"></textarea>            
+            <button class="btn btn-outline-success notes_btn" (click) = "onNotes()" type="button">Submit</button>
+            <p *ngIf='emptyNotes'>Please add notes to add into database</p>
+            <p *ngIf='emptyKeyword'>No enteries for the search, so notes cannot be added into database</p>
+            <p *ngIf='addNotes'>Added notes to the notes log</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

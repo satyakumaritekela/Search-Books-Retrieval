@@ -1,0 +1,27 @@
+.books_table {
+    overflow:auto;
+    max-width: 100%;
+    max-height: 400px
+}
+.container {
+    margin: 0;
+}
+* {
+    outline: none;
+    text-decoration: none;
+}
+p {
+    font-family: 'Source Code Pro', monospace;  
+    font-size: 18px;
+}
+.main_content {
+    justify-content: center;
+    margin-top: 40px;
+}
+.input-group {
+    padding: 0;
+}
+.notes_btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
